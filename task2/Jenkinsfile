@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment{
-    DOCKERHUB_CREDENTIALS=credentials('dockerhun')
+    DOCKERHUB_CREDENTIALS=credentials('dockerhub')
   }
   stages {
     stage('init'){
@@ -11,12 +11,7 @@ pipeline {
     }
     stage('build stage'){
       steps{
-        sh "docker build -t myapp ."
-      }
-    }
-    stage('test stage'){
-      steps{
-        sh 'chmod +x deploy.sh'
+        sh 'chmod +x ./task2/deploy.sh'
         sh 'docker run -d -p 80:5500 --name app myapp'
       }
     }
