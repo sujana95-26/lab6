@@ -11,8 +11,8 @@ pipeline {
     }
     stage('build stage'){
       steps{
-        sh 'chmod +x ./task2/deploy.sh'
-        sh 'docker run -d -p 80:5500 --name app myapp'
+        // sh 'chmod +x ./task2/deploy.sh'
+        sh 'sh ./task2/deploy.sh'
       }
     }
     stage('push'){
