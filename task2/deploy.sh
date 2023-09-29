@@ -11,8 +11,8 @@ docker network create trio-task-network
 docker volume create new-volume
 
 # Build images
-docker build -t trio-task-mysql:5.7 db 
-docker build -t trio-task-flask-app:latest flask-app
+docker build -t trio-task-mysql:5.7 task2/db 
+docker build -t trio-task-flask-app:latest task2/flask-app
 
 # Run mysql container
 docker run -d \
